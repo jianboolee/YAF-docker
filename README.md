@@ -54,3 +54,36 @@ docker run -d -p 1122:80 -v "`pwd`":/yaf newfuture/yaf
 ```bash
 docker run -it --rm -p 1122:80 -v "`pwd`":/yaf newfuture/yaf:php5
 ```
+
+
+## Nginx 配置
+
+参考
+
+```
+server
+  {
+    listen 80;
+    server_name yourdomain.com;
+    index index.html index.php;
+    root /home/wwwroot;
+
+    location / {
+    }
+
+    location ~ .*\.(php|php5)?$ {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'Authorization,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+
+        # WORKDIR
+        root /yaf;
+
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        include fastcgi.conf;
+        include fastcgi_params;
+    }
+  }
+```
