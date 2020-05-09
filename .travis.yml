@@ -27,7 +27,9 @@ env:
     - BUILD_PATH: "docker" #the build folder to deploy[生成发布的目录] 
     - GIT_AUTHOR_NAME: "jianboolee" #username[用户名]
     - GH_BRANCH: "docker" #branches to push
-    - secure: bj1pmcNEISQOr6jFeEq/+25I3rnrVUfp53h8FlgpX4auvTH6S5cmpChfj3TrgaThqTkpvsgQPEVcg8V1Xvk7zW8iFzkrbbmDE7bKYDXavoSn7o01HGjMm43CDYlJXq7M//j1GXN9ph8EizgD8L1uSbt3fcFGNp1Np8bOe62dAS/0zTUCwc5xX3nuHURc+wAX6+WqYqCtn5+xR78GIooc9GJdpbsFCpMZwV+bLW1QTt/GnVZIiaaaLMnJ/+AfzbfXKJcKwQj1bsOtJ0TjI7YVHuBt2Am6qS8uyNslWN8XBmK6VXetQj2yPXTfpJfnMOlgwPeOdXT9iEyWdv/LD2ydVEdTDyA//KWrDN+3GxHP7DmpUMFkYyf6F2L38Jg4XG5q04YwTcj6lU06DRtfnTzHe2CdkdDsksH1WzOwb2PWWbmOKzWltWz4WEcWmI0iWXQgTlZS9yawikCfoJRICqd/FXNKrvBT8pFLxjMutJbMtcco8ANbXq+xPlrJFtRBgHRbz9U/dVwwBofeQ7IBTnkaeYx2Y3iUu4HkYbi7YOszCvvwy0s7l7yhcgn8q3ZlXWNBu9tMs+rmaj0oFT322EjIW3RkzlKBrlKGRFmTuSHnnVMTmRAR/zL8hG+w87gQeDVFLbRpm4ADpzPbiAUa9EICt3J6i/Hro6lOvtoaEeSXUfY=
+    # - secure: (encrypted string: GH_TOKEN=xxx])
+    # - GH_TOKEN: "de95f425a2514a7700538bb9e2c1655a8e8971aa"
+    - secure: "Ud1TN1LkkKhv6lQLY0RCjRsKKF7F4TaeI5TJjVLHQiMAdWm2yhb8Bj7HATfP3MVSr1QGDMR6cmYGutMM8cXWDELf3jr+AX6yOmPDSYkjXuC7POpr4544J9MXSndxJV6gGFGhOkUk1MTkURhNytxzMmoNr+8rZ+/cBXHFzOkrtbx19nSfYroeltyhjrwgi7xQBzHaXXgZljWRNyfbvXN6MENUPjV0HKr/mDj+c7bRKBTm5vMOjtisRdOK1CFdsqeN8EVbFJmKI93lSF855MNPwbWrBNM0TQjJm08jGLSTj6TJmns4TwNVl7J+VHgUI02mlpyLgiVhb1CW+J9csRmn2FULlzoOP1aH0lFZ4j1yqSwj9EwAaUUeoiYEK6EU3srHzjwzjmuuK8pJJKRvQHfrjg1t+vmkf3tPdqQel/z3ONBDjZ7zXpGAlb6T8IbRp2+fG+bopWFJZqk7EQTo9YaleEk+YOikQxZpnA7DtUht7Nfuth5RMdm7bO2xIIzBwLtwpqMhIsh53tQzwijVQ8a7KGs0kgd8GfjyRAim+zs6F+oMRIYQ7/VgylWHVOJh1210vdoFEKLg3FnYtJfXLP71NQDP1XtEx8FJPj1Q5Z7IaA6AHeQZqkrNmGkvJT4dIY+I5uyreVS7tE2zFpN35kIERGKCeFYBRlnEfvTm5MhAq9U="
     # auto generation and detection 默认下面变量会自动配置GIT变量
     - GIT_REF: "$(git ls-remote --get-url)" #git地址默认当前仓库，可修改为其他仓库
     # - GIT_ADD_PARAMS: "$PHP" #git add参数或者跟踪的文件[.]只增不删[-u]只删改不增[-A]全部
