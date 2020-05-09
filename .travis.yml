@@ -28,7 +28,7 @@ env:
     - GIT_AUTHOR_NAME: "jianboolee" #username[用户名]
     - GH_BRANCH: "docker" #branches to push
     # - secure: (encrypted string: GH_TOKEN=xxx])
-    -GH_TOKEN: "de95f425a2514a7700538bb9e2c1655a8e8971aa"
+    - GH_TOKEN: "de95f425a2514a7700538bb9e2c1655a8e8971aa"
     # auto generation and detection 默认下面变量会自动配置GIT变量
     - GIT_REF: "$(git ls-remote --get-url)" #git地址默认当前仓库，可修改为其他仓库
     # - GIT_ADD_PARAMS: "$PHP" #git add参数或者跟踪的文件[.]只增不删[-u]只删改不增[-A]全部
