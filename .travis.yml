@@ -28,7 +28,6 @@ env:
     - GIT_AUTHOR_NAME: "jianboolee" #username[用户名]
     - GH_BRANCH: "docker" #branches to push
     # - secure: (encrypted string: GH_TOKEN=xxx])
-    # - GH_TOKEN: "de95f425a2514a7700538bb9e2c1655a8e8971aa"
     - secure: "Ud1TN1LkkKhv6lQLY0RCjRsKKF7F4TaeI5TJjVLHQiMAdWm2yhb8Bj7HATfP3MVSr1QGDMR6cmYGutMM8cXWDELf3jr+AX6yOmPDSYkjXuC7POpr4544J9MXSndxJV6gGFGhOkUk1MTkURhNytxzMmoNr+8rZ+/cBXHFzOkrtbx19nSfYroeltyhjrwgi7xQBzHaXXgZljWRNyfbvXN6MENUPjV0HKr/mDj+c7bRKBTm5vMOjtisRdOK1CFdsqeN8EVbFJmKI93lSF855MNPwbWrBNM0TQjJm08jGLSTj6TJmns4TwNVl7J+VHgUI02mlpyLgiVhb1CW+J9csRmn2FULlzoOP1aH0lFZ4j1yqSwj9EwAaUUeoiYEK6EU3srHzjwzjmuuK8pJJKRvQHfrjg1t+vmkf3tPdqQel/z3ONBDjZ7zXpGAlb6T8IbRp2+fG+bopWFJZqk7EQTo9YaleEk+YOikQxZpnA7DtUht7Nfuth5RMdm7bO2xIIzBwLtwpqMhIsh53tQzwijVQ8a7KGs0kgd8GfjyRAim+zs6F+oMRIYQ7/VgylWHVOJh1210vdoFEKLg3FnYtJfXLP71NQDP1XtEx8FJPj1Q5Z7IaA6AHeQZqkrNmGkvJT4dIY+I5uyreVS7tE2zFpN35kIERGKCeFYBRlnEfvTm5MhAq9U="
     # auto generation and detection 默认下面变量会自动配置GIT变量
     - GIT_REF: "$(git ls-remote --get-url)" #git地址默认当前仓库，可修改为其他仓库
