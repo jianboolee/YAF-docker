@@ -7,7 +7,7 @@ CLI_PATH="$(pwd)/docker/$1/cli/"
 FPM_PATH="$(pwd)/docker/$1/fpm/"
 TMP_PATH="/tmp/$1/"
 APK_PKG="$1"
-PHP_EXT='yaf-3.0.5'
+PHP_EXT='yaf-3.1.4'
 ADD_EXT='#ADD_EXT'
 PRE_FPM='#ClEAN_TAG'
 
