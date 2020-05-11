@@ -55,10 +55,75 @@ docker run -d -p 1122:80 -v "`pwd`":/yaf newfuture/yaf
 docker run -it --rm -p 1122:80 -v "`pwd`":/yaf newfuture/yaf:php5
 ```
 
+## Build
+
+### 构建说明
+
+Build with travis
+
+1. 注册 https://www.travis-ci.org/ , 使用 github账户授权登录
+
+2. 同步后在 `Settings` 页面的仓库列表中开启Github上的项目 (https://www.travis-ci.org/account/repositories)
+
+3. 使用当前项目 `master`分支提交到自己的仓库中
+
+4. 默认情况下 travis 会帮你构建
+
+5. 提交前需要准备一个 secure 加密参数
+
+
+### 配置 secure 参数
+
+token 方式连接github, 使 travis 可以将打包好的项目方到github仓库中
+
+
+1. 本机安装 travis  
+
+```sh
+$ gem install travis
+```
+
+2. 登录 
+
+```sh
+$ travis login 
+# 根据提示输入 github的账户密码
+```
+
+3. 获取 github 的 access token 
+
+在github的`settings -> Developer settings -> Personal access tokens` 页面 `Generate new token` 生成一个token
+
+4. 加密这个token
+
+本机执行 
+```sh
+# 项目目录下执行
+cd /home/yaf-docker
+
+# 其中 xxx 即为在github中生成的token
+travis encrypt GH_TOKEN=xxx
+```
+
+5. 加密后得到一个字符串, 替换 `.travis.yml` 中的 `- secure: "xxx" ` 内容
+
+```
+- secure: "xxx"
+```
+
+6. 提交修改，等待 `travis` 构建
+
+7. 登录`travis` 查看构建日志可了解更多构建信息
+
 
 ## Nginx 配置
 
-参考
+php-fpm 版本请参考以下nginx配置;
+需要注意 root 目录配置, docker内的工作目录是 `/yaf`, 也可以写 `fastcgi_param` 来指定目录位置
+
+```sh
+$ docker run --name fpm-test -it --rm -p 9000:9000 -v /Users/Jainboo/Sites/yourdomain.com:/yaf jianboo/yaf:latest
+```
 
 ```
 server
@@ -72,11 +137,6 @@ server
     }
 
     location ~ .*\.(php|php5)?$ {
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Credentials' 'true';
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-        add_header 'Access-Control-Allow-Headers' 'Authorization,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
-
         # WORKDIR
         root /yaf;
 
